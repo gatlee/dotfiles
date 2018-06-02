@@ -230,8 +230,10 @@ exec redshift -l 37.8136:144.9631
 exec setxkbmap -layout au -option caps:ctrl_modifier 
 exec xcape -e '#66=Escape'
 exec mons -a
-exec feh --bg-fill "~/Pictures/Wallpapers/005.png"
-exec wal --theme hybrid-material
+
+#Colors
+exec ~/.fehbg #sets last wallpaper again
+exec wal --theme hybrid-material 
 
 exec xss-lock slock
 exec syncthing
