@@ -1,0 +1,3 @@
+"\C-v": paste-from-clipboard
+# Sets editing-mode to vi for all readlines
+set editing-mode vi 
