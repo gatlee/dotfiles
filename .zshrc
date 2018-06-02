@@ -105,4 +105,32 @@ zstyle :compinstall filename '/home/gatlee/.zshrc'
 
 autoload -Uz compinit
 compinit
+
+zstyle ':completion:*' menu select
+setopt COMPLETE_ALIASES
 # End of lines added by compinstall
+
+
+
+# ========== ALIASES ========== 
+
+alias ls='ls --color=auto'
+alias melb-vpn='sudo openconnect remote.unimelb.edu.au/student'
+alias melb-ssh='ssh gkaw@dimefox.eng.unimelb.edu.au'
+alias please='sudo $(fc -ln -1)'
+#Enter correct directory when exiting ranger
+alias ran='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+alias scrot="scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots'"
+alias setkb="setxkbmap -layout au -option caps:ctrl_modifier" 
+alias rm="rm -i"
+alias kilall="killall"
+
+alias discord="flatpak run com.discordapp.Discord"
+
+
+# Location aliases
+alias gs="cd ~/Documents/school/2018_Sem1"
+alias gc="cd ~/Documents/school/2018_Sem1/COMP10002/assessment_2"
+alias dot="vim ~/dotrectory.md"
+
