@@ -133,12 +133,14 @@ alias rmt=trash
 alias kilall="killall"
 
 alias discord="flatpak run com.discordapp.Discord"
+alias lock="betterlockscreen -l"
 
 
 # Location aliases
 alias gs="cd ~/Documents/school/2018_Sem1"
 alias gc="cd ~/Documents/school/2018_Sem1/COMP10002/assessment_2"
 alias dot="vim ~/dotrectory.md"
+alias ctl="systemctl"
 
 alias seetrash="cd ~/.local/share/Trash/files"
 (cat ~/.cache/wal/sequences &)
