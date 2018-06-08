@@ -118,6 +118,7 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 bindcode $mod+49 workspace $music
+bindsym $mod+Tab workspace back_and_forth
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -235,5 +236,5 @@ exec mons -a
 exec ~/.fehbg #sets last wallpaper again
 exec wal --theme hybrid-material 
 
-exec xss-lock slock
+exec xss-lock betterlockscreen -l
 exec syncthing
