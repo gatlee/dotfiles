@@ -107,12 +107,12 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${colors.darkest}
+format-connected-foreground = ${colors.lighttext}
 format-connected-background = ${colors.darker}
 format-connected-padding = 2
 label-connected = %essid% 
 
-label-connected-foreground =  ${colors.darkest}
+label-connected-foreground =  ${colors.lighttext}
 format-disconnected = 
 
 ramp-signal-0 = 
@@ -120,7 +120,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.darkest}
+ramp-signal-foreground = ${colors.lighttext}
 
 [module/eth]
 type = internal/network
