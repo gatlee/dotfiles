@@ -110,7 +110,7 @@ zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
 # End of lines added by compinstall
 
-
+bindkey -M vicmd v edit-command-line
 
 # ========== ALIASES ========== 
 
