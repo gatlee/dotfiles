@@ -40,6 +40,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'unblevable/quick-scope'     
 Plugin 'tbabej/taskwiki'
 Plugin 'wincent/terminus'
+Plugin 'Carpetsmoker/undofile_warn.vim'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
 
@@ -200,3 +201,8 @@ let g:vimwiki_list = [{'path': '~/my_site/',
 
 " Makes background transparent
 "hi Normal guibg=NONE ctermbg=NONE
+
+"Persistent undo history
+set undofile
+set undodir=~/.vim/undodir
+let g:undofile_warn_mode=2
