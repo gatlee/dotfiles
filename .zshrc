@@ -143,4 +143,9 @@ alias dot="vim ~/dotrectory.md"
 alias ctl="systemctl"
 
 alias seetrash="cd ~/.local/share/Trash/files"
+alias tusk="/opt/Tusk/tusk-app"
+alias qute="qutebrowser"
+
+
 (cat ~/.cache/wal/sequences &)
+tmuxg
