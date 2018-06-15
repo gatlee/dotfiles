@@ -1,57 +1,48 @@
 ; vim:ft=cfg
-;=====================================================
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
-;
-;=====================================================
 [colors]
-
-;right side
-;lighter colour
-lighter = ${xrdb:color4:#222}
-;lighter = #98D4EF
-;darker colour
-darker = ${xrdb:color5:#222}
-
-;off white most light fonts color
+lighter = ${xrdb:color0:#222}
+darker = ${xrdb:color0:#222}
 lighttext = ${xrdb:color7:#222}
-;off black color
-darkest = ${xrdb:color0:#222}
-;i3bg
-i3bg = ${xrdb:color5:#222}
-
+darkest = ${xrdb:color7:#222}
+i3bg = ${xrdb:color1:#222}
+barbg= ${xrdb:color0:#222}
+i3focused = ${xrdb:color0:#222}
+; vim:ft=cfg
 [bar/autumn]
 width = 100%
-height = 34
+height = 36
 radius = 0
 fixed-center = true 
 bottom = true
 
-background = ${colors.darkest}
+background = ${colors.barbg}
 foreground = ${colors.lighttext}
 
 line-size = 3
 line-color =
 
-border-size = 0
+border-size = 10
+border-bottom-size = 8
+border-top-size = 0
+
 border-color =
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 0
 
-font-0 = "Source Code Pro Semibold:pixelsize=13;1"
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=13;1"
-font-2 = "Font Awesome 5 Brands:pixelsize=13;1"
+;font-0 = "Source Code Pro Semibold:pixelsize=13;1"
+font-0 = "SF Pro Display:style=Semibold:pixelsize=13;1"
+;font-0 = "Hack:style=Bold:pixelsize=13;1"
+font-1 = "Material Icons:style=Regular:pixelsize=13;1"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=13;1"
+font-3 = "Font Awesome 5 Brands:pixelsize=13;1"
 
 modules-left = i3
-modules-center = 
-modules-right = battery battery1 filesystem xbacklight volume xkeyboard memory cpu wlan eth temperature date powermenu
+modules-center = mpd
+modules-right = battery battery1 filesystem xbacklight volume xkeyboard memory cpu wlan eth temperature date
 
 tray-position = right
 tray-padding = 2
@@ -78,28 +69,28 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-label-mode-padding = 2
+label-mode-padding = 4
 label-mode-foreground = ${colors.darkest}
 label-mode-background = ${colors.i3bg}
 
 label-focused = %name%
 label-focused-background = ${colors.i3bg}
-label-focused-foreground = ${colors.lighttext}
-label-focused-padding = 2
+label-focused-foreground = ${colors.i3focused}
+label-focused-padding = 4
 
 label-unfocused = %name%
 label-unfocused-background = ${colors.i3bg}
 label-unfocused-foreground = ${colors.darkest}
-label-unfocused-padding = 2
+label-unfocused-padding = 4
 
 label-visible = %name%
 label-visible-background = ${colors.i3bg}
 label-visible-foreground = ${colors.darkest}
-label-visible-padding = 2
+label-visible-padding = 4
 
 label-urgent = %name%
 label-urgent-background = #BA2922
-label-urgent-padding = 2
+label-urgent-padding = 4
 
 [module/wlan]
 type = internal/network
@@ -107,12 +98,13 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${colors.lighttext}
+format-connected-foreground = ${colors.darkest}
 format-connected-background = ${colors.darker}
-format-connected-padding = 2
+format-connected-padding = 6
+format-connected-margin = 0
 label-connected = %essid% 
 
-label-connected-foreground =  ${colors.lighttext}
+label-connected-foreground =  ${colors.darkest}
 format-disconnected = 
 
 ramp-signal-0 = 
@@ -120,7 +112,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.lighttext}
+ramp-signal-foreground = ${colors.darkest}
 
 [module/eth]
 type = internal/network
@@ -149,7 +141,8 @@ time-alt = %H:%M:%S
 format-prefix = 
 format-foreground = ${colors.darkest}
 format-background = ${colors.lighter}
-format-padding = 2
+format-padding = 6
+format-margin = 0
 
 label = %date% %time%
 
@@ -192,20 +185,21 @@ margin-bottom = 0
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU"
+format-prefix = ""
 format-prefix-foreground = ${colors.darkest}
 label = %percentage:2%%
 
 format-foreground = ${colors.darkest}
 format-background = ${colors.lighter}
-format-padding = 2
+format-padding = 6
+format-margin = 0
 
 [module/battery]
 -background = ${colors.lighter}
 
 type = internal/battery
 
-full-at = 97
+full-at = 95
 
 battery = BAT0
 adapter = AC
@@ -214,14 +208,20 @@ poll-interval = 5
 time-format = %H:%M
 
 format-charging = <animation-charging>₁ <label-charging>
+format-charging-background = ${colors.darker}
+format-charging-foreground = ${colors.darkest}
+format-charging-padding = 4
 
 format-discharging = <ramp-capacity>₁ <label-discharging>
+format-discharging-background = ${colors.darker}
+format-discharging-foreground = ${colors.darkest}
+format-discharging-padding = 4
 
 label-charging = %percentage%%
 
 label-discharging =%percentage%%
 
-label-full = 
+label-full = 
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -255,7 +255,7 @@ animation-discharging-framerate = 500
 
 format-foreground = ${colors.darkest}
 format-background = ${colors.lighter}
-format-padding = 1
+format-padding = 3
 
 type = internal/battery
 
@@ -268,15 +268,23 @@ poll-interval = 5
 
 time-format = %H:%M
 
-format-charging = <animation-charging>₂ <label-charging>
+;format-charging = <animation-charging>₂ <label-charging>
+format-charging =
+
+format-charging-background = ${colors.lighter}
 
 format-discharging =<ramp-capacity>₂ <label-discharging>
+format-discharging-background = ${colors.darker}
+format-discharging-foreground = ${colors.darkest}
+format-discharging-padding = 4
+format-discharging-margin = 0
 
 label-charging = %percentage%%
 
 label-discharging = %percentage%%
 
-label-full = 
+label-full = 
+label-full-background = 
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -306,3 +314,18 @@ animation-discharging-framerate = 500
 
 
 
+[module/mpd]
+type = internal/mpd
+
+host = 127.0.0.1
+port = 6600
+format-online =  <label-song>
+; Seconds to sleep between progressbar/song timer sync
+; Default: 1
+interval = 2
+label-song =  %artist% - %title%
+
+bar-progress-width = 45
+bar-progress-indicator = |
+bar-progress-fill = -
+bar-progress-empty = -
