@@ -112,6 +112,9 @@ setopt COMPLETE_ALIASES
 
 bindkey -M vicmd v edit-command-line
 
+# ========== PATH ===========
+
+
 # ========== ALIASES ========== 
 
 function trash() {
@@ -123,6 +126,7 @@ alias ls='ls --color=auto'
 alias melb-vpn='sudo openconnect remote.unimelb.edu.au/student'
 alias melb-ssh='ssh gkaw@dimefox.eng.unimelb.edu.au'
 alias please='sudo $(fc -ln -1)'
+alias pls='sudo $(fc -ln -1)'
 #Enter correct directory when exiting ranger
 alias ran='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
@@ -132,13 +136,12 @@ alias rmt=trash
 
 alias kilall="killall"
 
-alias discord="flatpak run com.discordapp.Discord"
 alias lock="betterlockscreen -l"
 
 
 # Location aliases
-alias gs="cd ~/Documents/school/2018_Sem1"
-alias gc="cd ~/Documents/school/2018_Sem1/COMP10002/assessment_2"
+alias gs="cd ~/Documents/school/"
+alias gc="cd ~/Documents/school/COMP10002/assessment_2"
 alias dot="vim ~/dotrectory.md"
 alias ctl="systemctl"
 
@@ -146,6 +149,18 @@ alias seetrash="cd ~/.local/share/Trash/files"
 alias tusk="/opt/Tusk/tusk-app"
 alias qute="qutebrowser"
 
-
+alias tm="tmuxg"
+alias temp="acpi -t"
+alias gits="cd ~/Documents/gits/"
+alias poly="cd ~/.config/polybar"
 (cat ~/.cache/wal/sequences &)
-tmuxg
+alias lse="ls_extended -l"
+alias sleep="systemctl suspend"
+
+function emcopen() {
+ nohup emacsclient -a '' -c $1 &
+}
+
+alias emc=emcopen
+
+#tmuxg
