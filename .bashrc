@@ -21,8 +21,8 @@ alias discord="flatpak run com.discordapp.Discord"
 
 
 # Location aliases
-alias gs="cd ~/Documents/school/2018_Sem1"
-alias gc="cd ~/Documents/school/2018_Sem1/COMP10002/assessment_2"
+alias gs="cd ~/Documents/school/"
+alias gc="cd ~/Documents/school/COMP10002/assessment_2"
 alias dot="vim ~/dotrectory.md"
 
 PS1='[\u@\h \W]\$ '
