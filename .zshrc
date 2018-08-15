@@ -60,9 +60,13 @@ ZSH_THEME="kinda-fishy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  fzf-zsh
+  fzf
 )
 
 source $ZSH/oh-my-zsh.sh
+#Sourced from pacman as zsh-autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
