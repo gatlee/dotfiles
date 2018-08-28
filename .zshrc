@@ -135,6 +135,7 @@ alias pls='sudo $(fc -ln -1)'
 alias ran='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 alias scrot="scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots'"
+alias sc="scrot /tmp/screenshot.png"
 alias setkb="setxkbmap -layout au -option caps:ctrl_modifier" 
 alias rmt=trash
 
@@ -162,7 +163,7 @@ alias lse="ls_extended -l"
 alias sleep="systemctl suspend"
 
 function emcopen() {
- nohup emacsclient -a '' -c $1 &
+ nohup emacsclient -a '' -c $1 &!;
 }
 
 alias emc=emcopen
