@@ -35,14 +35,18 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'lifepillar/vim-solarized8'
 
 Plugin 'mikewest/vimroom'
-Plugin 'vimwiki/vimwiki'
 Plugin 'tpope/vim-surround'
 Plugin 'unblevable/quick-scope'     
-Plugin 'tbabej/taskwiki'
 Plugin 'wincent/terminus'
 Plugin 'Carpetsmoker/undofile_warn.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'justinmk/vim-sneak'
+Plugin 'scrooloose/syntastic'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'tbabej/taskwiki'
+"Plugin 'vimwiki/vimwiki'
 
 "Plugin 'lervag/wiki'
 " 
@@ -138,7 +142,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "Added from linux
 set background=dark
 
-colorscheme hybrid_material
+colorscheme solarized8
 let g:solarized_term_italics = 1
 let g:solarized_termcolors=256
 
@@ -206,3 +210,16 @@ let g:vimwiki_list = [{'path': '~/my_site/',
 set undofile
 set undodir=~/.vim/undodir
 let g:undofile_warn_mode=2
+
+
+"Syntastic Defaults
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_c_checkers = ['clang_check']
